@@ -18,6 +18,10 @@ app.use('/peerjs', peerServer);
 
 // Track rooms and their participants
 const rooms = new Map();
+app.get('/', (req, res) => {
+    res.send('Hello, World! Server is running.');
+});
+
 
 io.on("connection", socket => {
     console.log('New socket connection:', socket.id);
